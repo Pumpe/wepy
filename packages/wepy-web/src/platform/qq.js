@@ -11,7 +11,7 @@
 import cookie from '../helper/cookie';
 import { wxSuccess, wxFail } from '../helper/util';
 
-let wx = window.wx || {};
+let wx = window.tt || {};
 
 /**
  * wx.login(OBJECT)

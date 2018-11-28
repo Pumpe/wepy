@@ -116,23 +116,23 @@ exports = module.exports =  {
     } else if (attrs['v-for']) {
       // {for: "list", alias: "value", iterator1: "key", iterator2: "index"}
       let forExp = this.parseFor(attrs['v-for']);
-      rst['wx:for'] = `{{ ${forExp.for} }}`;
-      rst['wx:for-index'] = `${forExp.iterator1 || 'index'} `;
-      rst['wx:for-item'] = `${forExp.alias || 'item'} `;
-      rst['wx:key'] = `${forExp.iterator2 || forExp.iterator1 || 'index'} `;
+      rst['tt:for'] = `{{ ${forExp.for} }}`;
+      rst['tt:for-index'] = `${forExp.iterator1 || 'index'} `;
+      rst['tt:for-item'] = `${forExp.alias || 'item'} `;
+      rst['tt:key'] = `${forExp.iterator2 || forExp.iterator1 || 'index'} `;
       delete attrs['v-for'];
     } else if (attrs['v-show']) {
       let exp = `{{!(${attrs['v-show']})}}`;
       rst.hidden = exp;
       delete attrs['v-show'];
     } else if (attrs['v-if']) {
-      rst['wx:if'] = `{{ ${attrs['v-if']} }}`;
+      rst['tt:if'] = `{{ ${attrs['v-if']} }}`;
       delete attrs['v-if'];
     } else if (attrs['v-else-if']) {
-      rst['wx:elif'] = `{{ ${attrs['v-else-if']} }}`;
+      rst['tt:elif'] = `{{ ${attrs['v-else-if']} }}`;
       delete attrs['v-else-if'];
     } else if (attrs['v-else-if']) {
-      rst['wx:else'] = `{{ ${attrs['v-else']} }}`;
+      rst['tt:else'] = `{{ ${attrs['v-else']} }}`;
       delete attrs['v-else'];
     }
 

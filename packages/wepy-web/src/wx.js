@@ -28,7 +28,7 @@ const callback = (type, o, name, data) => {
 }
 
 
-let wx = window.wx || {};
+let wx = window.tt || {};
 
 wx.login = wx.login || function login (o) {
     console.error('wx.login is only implemented in browser');

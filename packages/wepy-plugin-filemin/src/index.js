@@ -16,7 +16,7 @@ export default class {
 
     constructor(c = {}) {
         const def = {
-            filter: new RegExp('\.(wxml|xml|json)$'),
+            filter: new RegExp('\.(ttml|xml|json)$'),
             config: {
             }
         };
@@ -35,7 +35,7 @@ export default class {
                 file: op.file
             });
 
-            if (/\.(wxml|xml)$/.test(op.file)) {
+            if (/\.(ttml|xml)$/.test(op.file)) {
                 op.code = pd.xmlmin(op.code);
             } else if (/\.json$/.test(op.file)) {
                 op.code = pd.jsonmin(op.code);

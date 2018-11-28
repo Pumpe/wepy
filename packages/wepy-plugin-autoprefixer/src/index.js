@@ -15,7 +15,7 @@ export default class {
 
     constructor(c = {}) {
         const def = {
-            filter: new RegExp('\.(wxss)$'),
+            filter: new RegExp('\.(ttss)$'),
             config: {
                 browsers: ['Android >= 2.3', 'Chrome > 20', 'iOS >= 6']
             }

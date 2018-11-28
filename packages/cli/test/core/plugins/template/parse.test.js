@@ -25,9 +25,9 @@ function createCompiler (options = {}) {
   return instance;
 }
 
-function getRaw (file, lang = 'wxml') {
+function getRaw (file, lang = 'ttml') {
   const original = path.join(__dirname, '..', '..', 'fixtures/template/original', file + '.html');
-  const assert = path.join(__dirname, '..', '..', 'fixtures/template/assert', file + '.wxml');
+  const assert = path.join(__dirname, '..', '..', 'fixtures/template/assert', file + '.ttml');
 
   return {
     originalRaw: fs.readFileSync(original, 'utf-8'),

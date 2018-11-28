@@ -6,6 +6,6 @@
 
 export function getter () {
 	return () => {
-		wx.$loading.show = false;
+		tt.$loading.show = false;
 	};
 };

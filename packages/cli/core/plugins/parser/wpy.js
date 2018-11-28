@@ -74,7 +74,7 @@ exports = module.exports = function () {
         return context;
       }).then(context => {
         if (sfc.template && type !== 'app') {
-          sfc.template.lang = sfc.template.lang = 'wxml';
+          sfc.template.lang = sfc.template.lang = 'ttml';
           return this.hookAsyncSeq('pre-check-sfc', {
             node: sfc.template,
             file: file

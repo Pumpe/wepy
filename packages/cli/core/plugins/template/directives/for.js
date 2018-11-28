@@ -62,10 +62,10 @@ exports = module.exports = function () {
     }
 
     item['v-for'] = {
-      'wx:for': `{{ ${res.for} }}`,
-      'wx:for-index': `${res.iterator1 || 'index'}`,
-      'wx:for-item': `${res.alias || 'item'}`,
-      'wx:key': `${res.iterator2 || res.iterator1 || 'index'}`
+      'tt:for': `{{ ${res.for} }}`,
+      'tt:for-index': `${res.iterator1 || 'index'}`,
+      'tt:for-item': `${res.alias || 'item'}`,
+      'tt:key': `${res.iterator2 || res.iterator1 || 'index'}`
     };
 
     return {

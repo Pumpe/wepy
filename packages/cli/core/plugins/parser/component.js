@@ -32,23 +32,23 @@ exports = module.exports = function () {
     }
     let wpyTask = [];
 
-    ['.js', '.wxml', 'wxss', '.json'].forEach(v => this.involved[file + v] = 1);
+    ['.js', '.ttml', 'ttss', '.json'].forEach(v => this.involved[file + v] = 1);
 
     let styleContent = '';
-    if (fs.existsSync(file + '.wxss')) {  // If there is no wxss, then style is empty
-      styleContent = fs.readFileSync(file + '.wxss', 'utf-8');
+    if (fs.existsSync(file + '.ttss')) {  // If there is no ttss, then style is empty
+      styleContent = fs.readFileSync(file + '.ttss', 'utf-8');
     }
 
     sfc.styles[0] = {
       content: styleContent,
       type: 'style',
-      lang: 'wxss'
+      lang: 'ttss'
     };
 
     sfc.template = {
-      content: fs.readFileSync(file + '.wxml', 'utf-8'),
+      content: fs.readFileSync(file + '.ttml', 'utf-8'),
       type: 'template',
-      lang: 'wxml'
+      lang: 'ttml'
     };
 
     sfc.script = {

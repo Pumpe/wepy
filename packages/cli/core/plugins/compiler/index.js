@@ -5,7 +5,7 @@ const RawSource = require('webpack-sources').RawSource;
 
 exports = module.exports = function () {
 
-  ['js', 'json', 'css', 'wxml'].forEach(lang => {
+  ['js', 'json', 'css', 'ttml'].forEach(lang => {
     this.register('wepy-compiler-' + lang, function (node, ctx) {
       node.compiled = {
         code: node.content
@@ -14,7 +14,7 @@ exports = module.exports = function () {
     });
   });
 
-  this.register('wepy-compiler-wxss', function (node, ctx) {
+  this.register('wepy-compiler-ttss', function (node, ctx) {
     let code = node.content;
 
     let ast = css.parse(code);
@@ -22,7 +22,7 @@ exports = module.exports = function () {
     ast.stylesheet.rules.forEach(rule => {
       if (rule.type === 'import') {
         let importfile = rule.import;
-        if (importfile.startsWith('"') || importfile.startsWith("'")) {
+        if (importfile.startsWith('"') || importfile.startsWith('\'')) {
           importfile = importfile.substring(1, importfile.length - 1);
         }
         importfile = path.resolve(ctx.file, '..', importfile);
@@ -45,7 +45,7 @@ exports = module.exports = function () {
               source: new RawSource(importCode),
             }, { url: true, npm: ctx.npm });
 
-            this.hookUnique('wepy-compiler-wxss', {
+            this.hookUnique('wepy-compiler-ttss', {
               content: importCode
             }, Object.assign({}, ctx, { dep: true }));
           }

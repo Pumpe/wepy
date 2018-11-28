@@ -46,7 +46,7 @@ exports = module.exports = {
         this.resolve = resolve;
     },
     loadCompiler (lang) {
-        if (['wxml', 'xml', 'css', 'js'].indexOf(lang) > -1) {
+        if (['ttml', 'xml', 'css', 'js'].indexOf(lang) > -1) {
             return (c) => {
                 return Promise.resolve(c);
             };

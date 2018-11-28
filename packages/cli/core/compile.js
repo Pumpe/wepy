@@ -311,7 +311,7 @@ class Compile extends Hook {
       let compilerOptions = this.options.compilers[node.lang] || [];
 
       /*
-      if (['css', 'wxss', 'wxml', 'js', 'json'].indexOf(node.lang) > -1) {
+      if (['css', 'ttss', 'ttml', 'js', 'json'].indexOf(node.lang) > -1) {
         let parser = this.parsers[node.type];
         node.code = node.content;
         return parser.parse(node, ctx);
@@ -355,9 +355,9 @@ class Compile extends Hook {
 
     const outputMap = {
       script: 'js',
-      styles: 'wxss',
+      styles: 'ttss',
       config: 'json',
-      template: 'wxml'
+      template: 'ttml'
     };
 
     for (let k in outputMap) {

@@ -1,8 +1,8 @@
 const ADDITIONS_DIRECTIVES_HANDLES = {
   'v-show': ({item, name, expr}) => ({attrs: { hidden: `{{ !(${expr}) }}` }}),
-  'v-if': ({item, name, expr}) => ({attrs: { 'wx:if': `{{ ${expr} }}` }}),
-  'v-else-if': ({item, name, expr}) => ({attrs: { 'wx:elif': `{{ ${expr} }}` }}),
-  'v-else': ({item, name, expr}) => ({attrs: { 'wx:else': true }})
+  'v-if': ({item, name, expr}) => ({attrs: { 'tt:if': `{{ ${expr} }}` }}),
+  'v-else-if': ({item, name, expr}) => ({attrs: { 'tt:elif': `{{ ${expr} }}` }}),
+  'v-else': ({item, name, expr}) => ({attrs: { 'tt:else': true }})
 };
 
 exports = module.exports = function () {

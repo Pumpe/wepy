@@ -6,6 +6,6 @@
 
 export function getter (constructor) {
     return () => {
-        wx.$toast.show = false;
+        tt.$toast.show = false;
     };
 };

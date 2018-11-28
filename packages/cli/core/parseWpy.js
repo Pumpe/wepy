@@ -38,7 +38,7 @@ exports = module.exports =  {
         sfc.config && (sfc.config.parsed = parsed);
 
         if (sfc.template && type !== 'app') {
-          sfc.template.lang = sfc.template.lang = 'wxml';
+          sfc.template.lang = sfc.template.lang = 'ttml';
           return this.compilation.applyCompiler(this.checkSrc(sfc.template, file), context);
         }
         return null;
